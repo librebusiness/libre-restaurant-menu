@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "libre-restaurant-menu": {
+      "hosting": {
+        "LibreRestaurantMenu": [
+          "libre-restaurant-menu"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "libre-restaurant-menu"
+  }
+}

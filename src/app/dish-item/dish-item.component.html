@@ -1,0 +1,10 @@
+<li class="list-group-item" *ngIf="dish">
+  <div class="d-flex">
+    <div class="justify-content-between">
+      {{ dish.name }}
+    </div>
+    <div class="justify-content-between text-end">
+      {{ dish.price | currency }}
+    </div>
+  </div>
+</li>

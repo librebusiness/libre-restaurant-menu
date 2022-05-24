@@ -1,0 +1,27 @@
+<form [formGroup]="dishForm" (ngSubmit)="onSubmit()" *ngIf="user$ | async">
+  <div class="row">
+    <div class="col">
+      <div class="mb-3">
+        <label for="name">Name</label>
+        <input formControlName="name" class="form-control" id="name" type="text">
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-3">
+        <label for="price">Price</label>
+        <input formControlName="price" id="price" type="number" class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="description">Description</label>
+    <textarea formControlName="description" class="form-control" id="description"></textarea>
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-primary" type="submit">Save</button>
+  </div>
+</form>
+
+<ul class="list-group">
+  <app-dish-item [dish]="dish" *ngFor="let dish of dishes | async"></app-dish-item>
+</ul>
