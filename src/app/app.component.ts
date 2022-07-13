@@ -15,6 +15,7 @@ export class AppComponent {
   ];
   signedInLinks = [
     { title: 'Dashboard', fragment: 'dashboard' },
+    { title: 'Profile', fragment: 'profile' },
   ];
   user$: Observable<User | null>;
 

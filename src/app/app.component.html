@@ -2,17 +2,17 @@
   <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
     <a ngbNavLink [routerLink]="[link.fragment]">{{ link.title }}</a>
   </li>
-  <ng-template  *ngIf="user$ | async">
+  <ng-container  *ngIf="user$ | async">
     <li [ngbNavItem]="link.fragment" *ngFor="let link of signedInLinks">
       <a ngbNavLink [routerLink]="[link.fragment]">{{ link.title }}</a>
     </li>
-  </ng-template>
+  </ng-container>
   <li ngbNavItem="" *ngIf="user$ | async; else showLogin">
-    <a ngbNavLink href="#" (click)="logout()">logout</a>
+    <a ngbNavLink href="#" (click)="logout()">Logout</a>
   </li>
   <ng-template #showLogin>
     <li ngbNavItem="login">
-      <a ngbNavLink routerLink="login">login</a>
+      <a ngbNavLink routerLink="login">Login</a>
     </li>
   </ng-template>
 </ul>

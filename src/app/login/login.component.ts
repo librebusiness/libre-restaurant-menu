@@ -31,7 +31,20 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['dashboard']);
     })
     .catch(err => {
-      alert(err.message);
+      const alert = document.createElement('div');
+      alert.className = "alert alert-danger alert-dismissible fade show my-2";
+      alert.setAttribute('role', 'alert');
+      const strong = document.createElement('strong');
+      strong.textContent = 'Error';
+      alert.appendChild(strong);
+      alert.append(`: ${err.message}`);
+      const button = document.createElement('button');
+      button.className = 'btn-close';
+      button.setAttribute('data-bs-dismiss', 'alert');
+      button.setAttribute('aria-label', 'close');
+      button.onclick = () => alert.remove();
+      alert.appendChild(button);
+      document.querySelector('div#logger')!.appendChild(alert);
     });
   }
 

@@ -1,4 +1,9 @@
-<form [formGroup]="dishForm" (ngSubmit)="onSubmit()" *ngIf="user$ | async">
+<h2>All Dishes</h2>
+<ul class="list-group">
+  <app-dish-item [dish]="dish" *ngFor="let dish of dishes | async"></app-dish-item>
+</ul>
+
+<form [formGroup]="dishForm" (ngSubmit)="onSubmit()">
   <div class="row">
     <div class="col">
       <div class="mb-3">
@@ -21,7 +26,3 @@
     <button class="btn btn-primary" type="submit">Save</button>
   </div>
 </form>
-
-<ul class="list-group">
-  <app-dish-item [dish]="dish" *ngFor="let dish of dishes | async"></app-dish-item>
-</ul>

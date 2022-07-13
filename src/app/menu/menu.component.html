@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let dish of dishes | async">
+    <div class="row">
+      <div class="col-9">
+        {{ dish.name }}
+      </div>
+      <div class="col text-end">
+        {{ dish.price | currency }}
+      </div>
+    </div>
+  </li>
+</ul>
